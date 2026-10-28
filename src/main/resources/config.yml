@@ -1,0 +1,103 @@
+# Мир, в который телепортирует
+world: grief-1
+
+near:
+  min-distance: 60
+  max-distance: 180
+  cooldown-seconds: 900
+
+base:
+  min-distance: 50
+  max-distance: 120
+  cooldown-seconds: 900
+  # Учитывать только игроков, заходивших за последние N дней
+  active-days: 30
+  # Сколько оффлайн-игроков максимум проверять за одну команду (защита от лагов)
+  max-checked-players: 40
+
+heal:
+  cooldown-seconds: 60
+
+feed:
+  cooldown-seconds: 30
+
+back:
+  cooldown-seconds: 300
+  # Миры, в которых работает /back (и запоминаются места смерти / телепортации)
+  worlds:
+    - world
+    - grief-1
+    - grief-1_nether
+    - grief-1_the_end
+
+# Оформление ника после префикса из /prefix и /uprefix (белый жирный).
+# Цвет пишется ПЕРЕД жирным: &f&l (а &l&f сбросит жирность). Пустая строка — не менять ник.
+name-style: "&f&l"
+
+# /uprefix — префикс в табе и над головой (плагин TAB)
+uprefix:
+  # Максимум символов префикса без учёта цветовых кодов
+  max-length: 16
+  # Что добавлять после префикса (пробел между префиксом и ником)
+  suffix: " "
+  # Какие свойства TAB менять: tabprefix — таб, tagprefix — над головой
+  properties:
+    - tabprefix
+    - tagprefix
+
+# /prefix — префикс только в чате (нужен чат, который берёт префикс из TAB: chatprefix)
+prefix:
+  max-length: 16
+  suffix: " "
+  properties:
+    - chatprefix
+
+# /player on|off — скрывает донат/префикс, показывает жирное "Игрок"
+player:
+  text: "&f&lИгрок"
+  suffix: " &r"
+  properties:
+    - tabprefix
+    - tagprefix
+    - chatprefix
+
+# Сколько попыток найти безопасную точку
+attempts: 20
+
+messages:
+  only-player: "&cЭту команду может использовать только игрок."
+  no-world: "&cМир не найден."
+  no-permission: "&cУ вас нет прав."
+  cooldown: "&cПодождите ещё &e%seconds% &cсек."
+  no-players: "&cВ мире нет подходящих игроков."
+  no-bases: "&cНе удалось найти ни одной базы."
+  player-not-found: "&cИгрок не найден."
+  no-bed: "&cУ этого игрока нет дома (кровати) в этом мире."
+  no-safe: "&cНе удалось найти безопасное место, попробуйте ещё раз."
+  searching: "&7Ищем место..."
+  done-near: "&aВы телепортированы рядом с игроком."
+  done-base: "&aВы телепортированы рядом с чьей-то базой."
+  player-usage: "&eИспользование: &f/player on &7| &f/player off"
+  player-on: "&aМаскировка включена: вы отображаетесь как &f&lИгрок&a."
+  player-off: "&aМаскировка выключена."
+  prefix-usage: "&eИспользование: &f/prefix <текст> &7| &f/prefix reset"
+  prefix-set: "&aВаш префикс в чате: &r%prefix%"
+  prefix-reset: "&aПрефикс в чате сброшен."
+  uprefix-usage: "&eИспользование: &f/uprefix <текст> &7| &f/uprefix reset"
+  uprefix-set: "&aВаш префикс в табе: &r%prefix%"
+  uprefix-reset: "&aПрефикс сброшен."
+  uprefix-too-long: "&cПрефикс слишком длинный (максимум &e%max%&c символов)."
+  uprefix-bad-chars: "&cВ префиксе недопустимые символы."
+  player-offline: "&cИгрок не в сети."
+  heal-usage: "&eИспользование: &f/heal <игрок>"
+  heal-self: "&aВы вылечены."
+  heal-other: "&aВы вылечили игрока &e%player%&a."
+  heal-by: "&aИгрок &e%player% &aвас вылечил."
+  feed-usage: "&eИспользование: &f/feed <игрок>"
+  feed-self: "&aВы сыты."
+  feed-other: "&aВы накормили игрока &e%player%&a."
+  feed-by: "&aИгрок &e%player% &aвас накормил."
+  back-none: "&cНет места, куда можно вернуться."
+  back-world: "&cВ этом мире команда /back не работает."
+  back-done: "&aВы вернулись на прошлое место."
+  reloaded: "&aКонфиг перезагружен."

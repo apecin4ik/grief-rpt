@@ -1,0 +1,78 @@
+name: GriefRTP
+version: '${project.version}'
+main: ru.grief.rtp.RtpPlugin
+api-version: '1.20'
+softdepend: [TAB]
+loadbefore: [Essentials, EssentialsX, CMI]
+description: Random teleport near players and bases
+commands:
+  rtpnear:
+    description: Teleport 60-180 blocks from a random player
+    usage: /rtpnear
+  rtpbase:
+    description: Teleport 50+ blocks from someone's base
+    usage: /rtpbase [player]
+  uprefix:
+    description: Set your prefix in tab list
+    usage: /uprefix <text|reset>
+  heal:
+    description: Heal yourself or another player
+    usage: /heal [player]
+  feed:
+    description: Feed yourself or another player
+    usage: /feed [player]
+  back:
+    description: Return to your death location or previous location
+    usage: /back
+  player:
+    description: Toggle rank mask (shows plain "Игрок" instead of your prefix)
+    usage: /player <on|off>
+  prefix:
+    description: Set your chat-only prefix
+    usage: /prefix <text|reset>
+permissions:
+  rtp.near:
+    description: Use /rtpnear
+    default: false
+  rtp.base:
+    description: Use /rtpbase
+    default: false
+  rtp.base.target:
+    description: Use /rtpbase <player>
+    default: op
+  rtp.bypass.cooldown:
+    description: Ignore cooldowns
+    default: op
+  rtp.reload:
+    description: Reload config
+    default: op
+  uprefix.use:
+    description: Use /uprefix for yourself
+    default: false
+  uprefix.admin:
+    description: Set/reset prefix of other players, reload
+    default: op
+  grief.heal:
+    description: Use /heal for yourself
+    default: false
+  grief.heal.others:
+    description: Use /heal <player>
+    default: false
+  grief.feed:
+    description: Use /feed for yourself
+    default: false
+  grief.feed.others:
+    description: Use /feed <player>
+    default: false
+  grief.back:
+    description: Use /back
+    default: false
+  grief.player:
+    description: Use /player on|off
+    default: false
+  grief.prefix:
+    description: Use /prefix for yourself
+    default: false
+  grief.prefix.admin:
+    description: Set/reset chat prefix of other players
+    default: op
